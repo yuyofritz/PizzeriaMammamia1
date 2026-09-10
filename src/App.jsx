@@ -1,15 +1,19 @@
-import Navbar from './components/Navbar'
-import Home from './views/Home'
-import Footer from './components/Footer'
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+// import Home from "./views/Home";
+import RegisterPage from "./views/RegisterPage";
+// import LoginPage from "./views/LoginPage";
 
 const App = () => {
   return (
-    <>
+    <div>
       <Navbar />
-      <Home />
+      {/* <Home /> */}
+      <RegisterPage />
+      {/* <LoginPage /> */}
       <Footer />
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default App;
