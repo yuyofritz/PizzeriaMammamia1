@@ -1,26 +1,25 @@
-const Navbar = () => {
-const total = 25000; 
+const Navbar = ({ total = 0 }) => {
 const token = false;
 
 return (
     <nav>
-        <button>🍕 Home</button>
+    <button>🍕 Home</button>
 
     {token ? (
         <>
         <button>🔓 Profile</button>
         <button>🔒 Logout</button>
         </>
-) : (
+    ) : (
         <>
         <button>🔐 Login</button>
         <button>🔐 Register</button>
-        </> 
+        </>
     )}
 
     <button>🛒 Total: ${total.toLocaleString("es-CL")}</button>
-    </nav> 
-    );
+    </nav>
+);
 };
 
 export default Navbar;
