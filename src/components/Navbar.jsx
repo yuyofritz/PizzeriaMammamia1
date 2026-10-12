@@ -1,25 +1,37 @@
+import { Link } from "react-router-dom";
+
 const Navbar = ({ total = 0 }) => {
-const token = false;
+  const token = false;
 
-return (
+  return (
     <nav>
-    <button>🍕 Home</button>
+      <Link to="/">
+        <button>🍕 Home</button>
+      </Link>
 
-    {token ? (
+      {token ? (
         <>
-        <button>🔓 Profile</button>
-        <button>🔒 Logout</button>
+          <Link to="/profile">
+            <button>🔓 Profile</button>
+          </Link>
+          <button>🔒 Logout</button>
         </>
-    ) : (
+      ) : (
         <>
-        <button>🔐 Login</button>
-        <button>🔐 Register</button>
+          <Link to="/login">
+            <button>🔐 Login</button>
+          </Link>
+          <Link to="/register">
+            <button>🔐 Register</button>
+          </Link>
         </>
-    )}
+      )}
 
-    <button>🛒 Total: ${total.toLocaleString("es-CL")}</button>
+      <Link to="/cart">
+        <button>🛒 Total: ${total.toLocaleString("es-CL")}</button>
+      </Link>
     </nav>
-);
+  );
 };
 
 export default Navbar;
