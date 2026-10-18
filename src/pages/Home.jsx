@@ -3,24 +3,25 @@ import CardPizza from "../components/CardPizza";
 import { pizzas } from "../pizzas";
 
 const Home = () => {
-return (
+  return (
     <>
-    <Header />
-    <div className="container py-5">
+      <Header />
+      <div className="container py-5">
         <div className="row">
-        {pizzas.map((pizza) => (
+          {pizzas.map((pizza) => (
             <CardPizza
-            key={pizza.id}
-            name={pizza.name}
-            price={pizza.price}
-            ingredients={pizza.ingredients}
-            img={pizza.img}
+              key={pizza.id}
+              id={pizza.id}
+              name={pizza.name}
+              price={pizza.price}
+              ingredients={pizza.ingredients}
+              img={pizza.img}
             />
-        ))}
+          ))}
         </div>
-    </div>
+      </div>
     </>
-);
+  );
 };
 
 export default Home;

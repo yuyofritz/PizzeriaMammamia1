@@ -1,4 +1,12 @@
-const CardPizza = ({ name, price, ingredients, img }) => {
+import { useCart } from "../context/CartContext";
+
+const CardPizza = ({ id, name, price, ingredients, img }) => {
+  const { addToCart } = useCart();
+
+  const handleAdd = () => {
+    addToCart({ id, name, price, img });
+  };
+
   return (
     <div className="col-md-4 mb-4">
       <div className="card h-100">
@@ -18,7 +26,9 @@ const CardPizza = ({ name, price, ingredients, img }) => {
 
           <div className="d-flex justify-content-center gap-2">
             <button className="btn btn-outline-dark">Ver más 👀</button>
-            <button className="btn btn-dark">Añadir 🛒</button>
+            <button className="btn btn-dark" onClick={handleAdd}>
+              Añadir 🛒
+            </button>
           </div>
         </div>
       </div>
