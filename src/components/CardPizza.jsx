@@ -1,4 +1,9 @@
+import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+
+<Link to={`/pizza/${id}`} className="btn btn-outline-dark">
+  Ver más 👀
+</Link>
 
 const CardPizza = ({ id, name, price, ingredients, img }) => {
   const { addToCart } = useCart();
@@ -25,7 +30,9 @@ const CardPizza = ({ id, name, price, ingredients, img }) => {
           <h4>${price.toLocaleString("es-CL")}</h4>
 
           <div className="d-flex justify-content-center gap-2">
-            <button className="btn btn-outline-dark">Ver más 👀</button>
+            <Link to={`/pizza/${id}`} className="btn btn-outline-dark">
+              Ver más 👀
+            </Link>
             <button className="btn btn-dark" onClick={handleAdd}>
               Añadir 🛒
             </button>

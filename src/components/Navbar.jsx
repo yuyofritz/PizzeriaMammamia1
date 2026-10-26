@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useUser } from "../context/UserContext";
 
 const Navbar = () => {
   const { total } = useCart();
-  const token = false;
+  const { token, logout } = useUser();
 
   return (
     <nav>
@@ -16,7 +17,7 @@ const Navbar = () => {
           <Link to="/profile">
             <button>🔓 Profile</button>
           </Link>
-          <button>🔒 Logout</button>
+          <button onClick={logout}>🔒 Logout</button>
         </>
       ) : (
         <>
