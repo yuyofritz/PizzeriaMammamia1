@@ -27,7 +27,7 @@ const AppRoutes = () => {
           element={token ? <Profile /> : <Navigate to="/login" />}
         />
 
-        {/* Si ya hay token, no se puede ir a login/register */}
+        {/* Si el token es true, no se puede acceder a login/register */}
         <Route
           path="/login"
           element={token ? <Navigate to="/" /> : <Login />}

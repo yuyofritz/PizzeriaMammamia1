@@ -3,9 +3,11 @@ import { createContext, useState, useContext } from "react";
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [token, setToken] = useState(true);
+  const [token, setToken] = useState(true); // por defecto true
 
-  const logout = () => setToken(false);
+  const logout = () => {
+    setToken(false);
+  };
 
   return (
     <UserContext.Provider value={{ token, logout }}>
@@ -17,7 +19,7 @@ export const UserProvider = ({ children }) => {
 export const useUser = () => {
   const context = useContext(UserContext);
   if (!context) {
-    throw new Error("useUser debe usarse dentro de UserProvider");
+    throw new Error("useUser debe usarse dentro de un UserProvider");
   }
   return context;
 };

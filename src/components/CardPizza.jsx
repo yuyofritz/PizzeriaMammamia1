@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
-<Link to={`/pizza/${id}`} className="btn btn-outline-dark">
-  Ver más 👀
-</Link>
-
 const CardPizza = ({ id, name, price, ingredients, img }) => {
   const { addToCart } = useCart();
 
